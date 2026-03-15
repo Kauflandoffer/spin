@@ -34,6 +34,7 @@ width:90%;
 max-width:330px;
 height:auto;
 margin-top:15px;
+transition: transform 2s ease-out;
 }
 
 .spin-btn{
@@ -46,6 +47,11 @@ border-radius:8px;
 margin-top:20px;
 cursor:pointer;
 box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+.spin-btn:disabled{
+opacity:0.6;
+cursor:not-allowed;
 }
 
 .spin-btn:active{
@@ -106,7 +112,7 @@ die die Chance haben einen Kaufland Gutschein zu gewinnen.
 
 <br>
 
-<button class="spin-btn" onclick="spin()">
+<button class="spin-btn" id="spinButton" onclick="spin()">
 JETZT DREHEN
 </button>
 
@@ -186,7 +192,7 @@ um Ihren 750€ Kaufland Gutschein zu erhalten.
 
 Sie haben noch
 <b><span id="mins">5</span> Minuten
-<span id="hsecs">30</span> Sekunden</b>
+<span id="secs">30</span> Sekunden</b>
 
 </div>
 
@@ -205,27 +211,61 @@ JETZT GUTSCHEIN BEANSPRUCHEN
 <script>
 
 var count = 1;
+var rotation = 0;
 
 function spin(){
+
+var wheel = document.getElementById("wheel");
+var button = document.getElementById("spinButton");
+
+button.disabled = true;
+
+rotation += 720 + Math.floor(Math.random()*360);
+wheel.style.transform = "rotate(" + rotation + "deg)";
+
+setTimeout(function(){
 
 if(count == 1){
 
 alert("Leider kein Gewinn. Versuchen Sie es erneut!");
+button.disabled = false;
 
-}
-
-else{
+}else{
 
 document.getElementById("firstpage").style.display="none";
 document.getElementById("secondpage").style.display="block";
+startTimer();
 
 }
 
 count++;
+
+},2000);
+
+}
+
+function startTimer(){
+
+var mins = 5;
+var secs = 30;
+
+setInterval(function(){
+
+if(secs == 0){
+mins--;
+secs = 59;
+}else{
+secs--;
+}
+
+document.getElementById("mins").innerText = mins;
+document.getElementById("secs").innerText = secs;
+
+},1000);
 
 }
 
 </script>
 
 </body>
-  </html>
+</html>
