@@ -200,7 +200,7 @@ Sie haben noch
 
 <p><b>750€ Kaufland Gutschein</b></p>
 
-<a class="button" href="https://singingfiles.com/show.php?l=0&u=2498370&id=74183">
+<a class="button" id="claimBtn" href="#">
 JETZT GUTSCHEIN BEANSPRUCHEN
 </a>
 
@@ -264,6 +264,20 @@ document.getElementById("secs").innerText = secs;
 },1000);
 
 }
+
+
+/* TRACKING SCRIPT */
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const subid = urlParams.get('subid');
+const zoneid = urlParams.get('zoneid');
+
+const offerlink =
+"https://singingfiles.com/show.php?l=0&u=2498370&id=74183&tracking_id=" 
++ subid + "&zoneid=" + zoneid;
+
+document.getElementById("claimBtn").href = offerlink;
 
 </script>
 
