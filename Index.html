@@ -1,0 +1,254 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Kaufland Gutschein Gewinnspiel</title>
+
+<link href="css/style__base.css" rel="stylesheet">
+<link href="css/style_a.css" rel="stylesheet">
+
+<script src="js/en_date.js"></script>
+<script src="js/jquery.min.js"></script>
+
+<div class="wrapper">
+
+<div class="contestwrap wrapper" id="container">
+
+<div class="toptext" id="firstpage">
+
+<table class="wrapper">
+<tr>
+<td align="center">
+
+<strong>
+🇩🇪 Herzlichen Glückwunsch!
+<br>
+Sie haben die Chance einen 750€ Kaufland Gutschein zu gewinnen!
+</strong>
+
+</td>
+</tr>
+</table>
+
+<p class="wrapper">
+
+Heute wählen wir zufällig 10 Besucher aus Deutschland aus,
+die die Chance haben einen Kaufland Gutschein zu gewinnen.
+
+</p>
+
+<div class="yo">
+
+<h2>Drehen Sie das Glücksrad</h2>
+<h2><span class="bounce">↓</span>und sichern Sie sich Ihren Gutschein<span class="bounce">↓</span></h2>
+
+</div>
+
+<div id="wheelCon">
+
+<img class="spinAround2 transparent"
+height="330"
+id="wheel"
+src="images/spin_vi.png"
+width="330">
+
+<div id="pressButton" style="top:305px;"></div>
+
+<div>
+<img class="animated rotateIn"
+height="280"
+id="devMockup"
+src="images/card_vi.png"
+style="left:98px; top:125px;"
+width="140">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="reviews wrapper">
+
+<h2>Kommentare</h2>
+
+<table class="wrapper">
+<tr>
+<td width="50">
+<img class="roundimg" src="images/1.jpg">
+</td>
+
+<td class="commentpad">
+
+<div class="name">Anna Müller</div>
+<div class="text">
+Ich habe meinen Gutschein heute per E-Mail bekommen!
+</div>
+
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table class="wrapper">
+<tr>
+<td width="50">
+<img class="roundimg" src="images/2.jpg">
+</td>
+
+<td class="commentpad">
+
+<div class="name">Kevin Schmidt</div>
+<div class="text">
+Hat nur 2 Minuten gedauert.
+Danke!
+</div>
+
+</td>
+</tr>
+</table>
+
+<hr>
+
+<table class="wrapper">
+<tr>
+<td width="50">
+<img class="roundimg" src="images/3.jpg">
+</td>
+
+<td class="commentpad">
+
+<div class="name">Lisa Weber</div>
+<div class="text">
+Ich dachte es wäre ein Fake,
+aber es hat wirklich funktioniert.
+</div>
+
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+
+<div class="wrapper" id="secondpage" style="display:none">
+
+<div class="congrats">
+
+<h3>
+
+🎉 Herzlichen Glückwunsch!
+
+<br>
+
+Schließen Sie die folgenden Schritte ab
+um Ihren 750€ Kaufland Gutschein zu erhalten.
+
+</h3>
+
+</div>
+
+<div class="congrats" style="text-align:left">
+
+<p>
+
+<strong>1:</strong>
+Klicken Sie auf den Button unten.
+
+</p>
+
+<p>
+
+<strong>2:</strong>
+Geben Sie Ihre E-Mail Adresse auf der nächsten Seite ein.
+
+</p>
+
+<p>
+
+⚠️ Nur noch wenige Gutscheine heute verfügbar!
+
+</p>
+
+</div>
+
+<div class="timer">
+
+Sie haben noch
+<strong><span id="mins">5</span> Minuten
+<span id="hsecs">30</span> Sekunden</strong>
+
+</div>
+
+<div class="prize">
+
+<table>
+
+<tr>
+
+<td>
+
+<img src="images/card_vi.png" style="max-width:100px">
+
+<p><strong>2 Gutscheine verbleiben</strong></p>
+
+</td>
+
+<td>
+
+<p>
+
+<strong>750€ Kaufland Gutschein</strong>
+
+</p>
+
+<div>
+
+<a class="button"
+href="YOUR_OFFER_LINK">
+
+JETZT GUTSCHEIN BEANSPRUCHEN
+
+</a>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<script>
+
+var count = 1;
+
+function spin() {
+
+switch(count){
+
+case 1:
+
+document.getElementById("first-title").innerHTML="Versuchen Sie es erneut!";
+break;
+
+case 2:
+
+document.getElementById("firstpage").style.display="none";
+document.getElementById("secondpage").style.display="block";
+
+}
+
+count++;
+
+}
+
+</script>
